@@ -1,0 +1,1 @@
+[02-Mar-2017 10:07:24 UTC] PHP Fatal error:  Call to a member function isLogin() on null in /home/universalpay/public_html/inc/header.php on line 5
