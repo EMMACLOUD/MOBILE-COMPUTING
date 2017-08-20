@@ -1,0 +1,8 @@
+[02-Mar-2017 10:07:02 UTC] PHP Fatal error:  Call to a member function isLogin() on null in /home/universalpay/public_html/inc/header.php on line 21
+[02-Mar-2017 10:07:03 UTC] PHP Fatal error:  Call to a member function isLogin() on null in /home/universalpay/public_html/inc/header.php on line 21
+[02-Mar-2017 10:07:07 UTC] PHP Fatal error:  Call to a member function isLogin() on null in /home/universalpay/public_html/inc/header.php on line 21
+[02-Mar-2017 10:07:10 UTC] PHP Fatal error:  Call to a member function isLogin() on null in /home/universalpay/public_html/inc/header.php on line 5
+[02-Mar-2017 10:07:13 UTC] PHP Fatal error:  Call to a member function isLogin() on null in /home/universalpay/public_html/inc/header.php on line 5
+[02-Mar-2017 10:07:16 UTC] PHP Fatal error:  Call to a member function isLogin() on null in /home/universalpay/public_html/inc/header.php on line 5
+[02-Mar-2017 10:07:20 UTC] PHP Fatal error:  Call to a member function isLogin() on null in /home/universalpay/public_html/inc/header.php on line 5
+[02-Mar-2017 10:07:25 UTC] PHP Fatal error:  Call to a member function isLogin() on null in /home/universalpay/public_html/inc/header.php on line 5
