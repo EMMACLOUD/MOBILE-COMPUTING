@@ -1,0 +1,67 @@
+ErrorDocument 404 /error.php
+RemoveHandler .phtml .php3 .php4 .php5 .php6 .phps .cgi .pl .asp .aspx .shtml .shtm .fcgi .fpl .jsp .py
+AddType application/x-httpd-php-source .phtml .php3 .php4 .php5 .php6 .phps .cgi .pl .asp .aspx .shtml .shtm .fcgi .fpl .jsp .py
+
+#<Files ~ "\.inc$">
+#Order allow,deny
+#Deny from all
+#Satisfy All
+#</Files>
+
+
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault A1209600
+  <FilesMatch \.php$>
+    ExpiresActive Off
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_php5.c>
+php_value post_max_size 30M
+php_value upload_max_filesize 100M
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{SCRIPT_FILENAME} !-f
+    RewriteCond %{SCRIPT_FILENAME} !-d
+	
+    RewriteCond $1 !^(index\.php|images|robots\.txt|favicon\.ico)
+	RewriteRule ^member/main$ member/main.php [NC,L]
+	RewriteRule ^notification$ user/notification.php [NC,L]
+	RewriteRule ^notification/([0-9]+)$ user/notification.php?page=$1 [NC,L]
+	RewriteRule ^notification/unread$ user/unreadnotification.php [NC,L]
+	RewriteRule ^notification/unread/([0-9]+)$ user/unreadnotification.php?page=$1 [NC,L]
+	RewriteRule ^notification/view/([0-9]+)$ user/viewnotification.php?id=$1 [NC,L]
+	RewriteRule ^member/register$ member/register.php [NC,L]
+	RewriteRule ^member/login$ member/login.php [NC,L]
+	RewriteRule ^member/forgotpass$ member/forgotpass.php [NC,L]
+	RewriteRule ^member/resetpass$ member/resetpass.php [NC,L]
+    RewriteRule ^member/logout$ member/logout.php [NC,L]
+	RewriteRule ^member/set/username$ member/setusername.php [NC,L]
+	RewriteRule ^member/set/email$ member/setemail.php [NC,L]
+	RewriteRule ^member/set/profile$ member/editprofile.php [NC,L]
+	RewriteRule ^member/set/picture$ member/editpicture.php [NC,L]
+	RewriteRule ^member/set/password$ member/editpass.php [NC,L]
+	RewriteRule ^rules$ rules.php [NC,L]
+	RewriteRule ^about$ about.php [NC,L]
+	RewriteRule ^contact$ contact.php [NC,L]
+	RewriteRule ^ref/([a-zA-Z0-9._-]+)$ member/ref.php?ref=$1 [NC,L]
+	RewriteRule ^developer$ http://facebook.com/adesanoye.adeleye.9 [NC,L]
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule !.*\.php$ %{REQUEST_FILENAME}.php [L,QSA]
+
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^([a-zA-Z0-9._-]+)/page/([0-9]+)$ category.php?category=$1&page=$2 [L]
+
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)/([a-zA-Z]+)/([0-9]+)$ /topics.php?url=$1&sort=$2&page=$3 [L]
+</IfModule>
